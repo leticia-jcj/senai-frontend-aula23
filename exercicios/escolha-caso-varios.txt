@@ -1,0 +1,331 @@
+algoritmo "masculino/feminino"
+// 1. Elabore um algoritmo que leia do teclado o sexo
+// de uma pessoa. Se o sexo digitado for M escreva sexo
+// masculino, se for F escreva sexo feminino;
+var
+   sexoF, sexoM: caracter
+   codigo: inteiro
+inicio
+
+   sexoF <- "Feminino"
+   sexoM <- "Masculino"
+
+   escreval("-------- SEXO --------")
+   escreval("                      ")
+   escreval("  Código | Descrição  ")
+   escreval("----------------------")
+   escreval("  - 1 -  | Feminino   ")
+   escreval("  - 2 -  | Maculino   ")
+   escreval("----------------------")
+
+   escreva("Digite o código do sexo: ")
+   leia(codigo)
+
+   escolha(codigo)
+   caso 1
+      escreva("Você escolheu o sexo ", sexoF)
+
+   caso 2
+      escreva("Você escolheu o sexo ", sexoM)
+
+   outrocaso
+      escreva("Código inváligo!")
+   fimescolha
+fimalgoritmo
+
+--------------------------------------------
+
+algoritmo "salario professor hora/aula"
+// A escola “APRENDER” faz o pagamento de seus professores por
+// hora/aula. Faça um algoritmo que calcule e exiba o salário
+// de um professor. Sabe-se que o valor da hora/aula segue a
+// tabela abaixo: Professor Nível 1 R$12,00 por hora/aula
+// Professor Nível 2 R$17,00 por hora/aula Professor Nível
+// 3 R$25,00 por hora/aula
+var
+   nivel1, nivel2, nivel3, salario: real
+   nivelProfessor, horaAula: inteiro
+
+inicio
+   escreval("--- ESCOLA APRENDER ---")
+   escreval("                       ")
+   escreval("   NIVEL | HORA/AULA   ")
+   escreval("-----------------------")
+   escreval("     1   |  R$12,00    ")
+   escreval("     2   |  R$17,00    ")
+   escreval("     3   |  R$25,00    ")
+   escreval("-----------------------")
+
+   nivel1 <- 12
+   nivel2 <- 17
+   nivel3 <- 25
+
+   escreva("Digite o nível do professor: ")
+   leia(nivelProfessor)
+
+   escreva("Digite a  quantidade de hora/aula: ")
+   leia(horaAula)
+
+   escolha(nivelProfessor)
+   caso 1
+      salario <-  nivel1 * nivelProfessor
+      escreva("Salário a receber: R$", salario)
+
+   caso 2
+      salario <-  nivel2 * nivelProfessor
+      escreva("Salário a receber: R$", salario)
+
+   caso 3
+      salario <-  nivel3 * nivelProfessor
+      escreva("Salário a receber: R$", salario)
+
+   outrocaso
+      escreva("Nível inválido!")
+
+   fimescolha
+fimalgoritmo
+
+-------------------------------------------
+
+algoritmo "cardapio lanchonete"
+// 3. O cardápio de uma lanchonete é o seguinte:
+// Especificação Preço unitário
+// 100 Cachorro quente 1,10
+// 101 Bauru simples   1,30
+// 102 Bauru c/ovo     1,50
+// 103 Hamburger       1,10
+// 104 Cheeseburger    1,30
+// 105 Refrigerante    1,00
+// Escrever um algoritmo que leia o código do item pedido,
+// a quantidade e calcule o valor
+// a ser pago por aquele lanche.
+// Considere que a cada execução somente será
+// calculado um item.
+var
+   cachorroQuente, bauruSimples, bauruOvo: real
+   hamburger, cheeseburger, refrigerante: real
+   codigoLanche: inteiro
+inicio
+
+   cachorroQuente <- 1.10
+   bauruSimples <- 1.30
+   bauruOvo <- 1.10
+   hamburger <- 1.50
+   cheeseburger <- 1.30
+   refrigerante <- 1.00
+   
+   
+   escreval("------------------  CARDÁPIO  -----------------")
+   escreval("                            ")
+   escreval("  Código  |       Descrição       |    Preços  ")
+   escreval("-----------------------------------------------")
+   escreval("   100    | Cachorro Quente............R$1,10  ")
+   escreval("   101    | Bauru Simples..............R$1,30  ")
+   escreval("   102    | Bauru c/ovo................R$1,50  ")
+   escreval("   103    | Hamburger..................R$1,10  ")
+   escreval("   104    | Cheeseburger...............R$1,30  ")
+   escreval("   105    | Refrigerante...............R$1,00  ")
+   escreval("-----------------------------------------------")
+
+   escreva("Digite o codigo do lanche: ")
+   leia(codigoLanche)
+
+
+
+fimalgoritmo
+-----------------------------------------------------
+4
+algoritmo "peso planeta"
+var
+   planeta: inteiro
+   pesoTerra,pesoPlaneta: real
+   nomePlaneta: caractere
+inicio
+   escreval("Saiba o seu peso nesses planetas: ")
+   escreval("1 - Mercurio")
+   escreval("2 - Venus")
+   escreval("3 - Marte")
+   escreval("4 - Jupiter")
+   escreval("5 - Saturno")
+   escreval("6 - Urano")
+
+   escreva("Escolha um planeta: ")
+   leia(planeta)
+
+   se(planeta < 1) ou (planeta > 6) entao
+      escreva("Opção invalida")
+   senao
+
+      escreva("Seu peso: ")
+      leia(pesoTerra)
+      
+      escolha(planeta)
+      caso 1
+         pesoPlaneta<- pesoTerra / 10 * 0.37
+         nomePlaneta<- "Mercurio"
+
+      caso 2
+         pesoPlaneta <- pesoTerra / 10 * 0.88
+         nomePlaneta<- "Venus"
+
+      caso 3
+         pesoPlaneta <- pesoTerra / 10 * 0.38
+         nomePlaneta<- "Marte"
+         
+      caso 4
+         pesoPlaneta<- pesoTerra / 10 * 2.64
+         nomePlaneta<- "Jupiter"
+         
+      caso 5
+         pesoPlaneta <- pesoTerra / 10 * 1.15
+         nomePlaneta<- "Saturno"
+         
+      caso 6
+         pesoPlaneta <- pesoTerra / 10 * 1.17
+         nomePlaneta<- "Urano"
+
+      outrocaso
+         pesoPlaneta<-0
+
+      fimescolha
+
+      se(pesoPlaneta = 0) entao
+         escreva("Opção invalida")
+      senao
+         escreva("O seu peso no planeta ",nomePlaneta," é: ", pesoPlaneta)
+      fimse
+   fimse
+fimalgoritmo
+
+
+-----------------------------------------------
+algoritmo "LANCHONETE BOMBAS"
+
+var
+   lanche: caractere
+   pedido,qtd,pagamento: inteiro
+   xBrocado, batata, valor:real
+   troco, dinheiro, xBomba, xSalada, xTudoFrango: real
+
+
+inicio
+
+   xBomba <- 10
+   xSalada <- 5
+   xTudoFrango<- 15
+   xBrocado<- 20
+   batata<- 17
+
+   escreval("-------------LANCHONETE BOMBAS-----------")
+   escreval("                            ")
+   escreval("  Código  |    Descrição    |    Preços  ")
+   escreval("-----------------------------------------")
+   escreval("   10     | X-Bomba...............R$10,00")
+   escreval("   20     | X-Salada...............R$5,00")
+   escreval("   30     | X-Tudo de frango.........R$15")
+   escreval("   40     | X-Brocado................R$20")
+   escreval("   50     | Batata Frita.............R$17")
+   escreval("-----------------------------------------")
+
+   escreva("Digite o CÓDIGO do pedido: ")
+   leia(pedido)
+
+   se(pedido <> 10) e (pedido <> 20) e (pedido <> 30) e (pedido <> 40) e (pedido <>50) entao
+      escreva("Opção invalido")
+
+   senao
+      escreva("Quantidade: ")
+      leia(qtd)
+
+      escolha(pedido)
+      caso 10
+         valor<- qtd * xbomba
+         lanche<- "X-Bomba"
+
+      caso 20
+         valor<- qtd * xSalada
+         lanche<- "X-Salada"
+
+      caso 30
+         valor <- qtd * xTudoFrango
+         lanche<- "X-Tudo de frango"
+
+      caso 40
+         valor<- qtd * xBrocado
+         lanche<- "X-Brocado"
+
+      caso 50
+         valor<- qtd * batata
+         lanche<- "Batata-frita"
+
+      outrocaso
+         valor<-0
+         lanche<- ""
+
+      fimescolha
+
+      limpatela
+
+      se(valor > 0) entao
+         escreval("---Resumo do pedido---")
+         escreval("Lanche: ",lanche)
+         escreval("Quantidade: ",qtd)
+         escreval("Valor total: ", valor)
+         escreval()
+         escreval("Forma de pagamento: ")
+         escreval("1 - PIX")
+         escreval("2 - Debito")
+         escreval("3 - Credito")
+
+         escreval("4 - Dinheiro")
+         leia(pagamento)
+
+         escolha(pagamento)
+         caso 1
+            escreval("QR CODE")
+            escreval("|||||||||||||||")
+            escreval("|||||||||||||||")
+            escreval("|||||||||||||||")
+            timer(2000)
+            escreval("Valor de ",valor," pago com suceso! Obrigado e volte sempre!")
+
+         caso 2
+            escreva("Insira ou aproxime o cartão: ")
+            timer(2000)
+            escreval("Valor de ",valor," pago com sucesso!")
+
+         caso 3
+            escreva("Insira ou aproxime o cartão: ")
+            timer(1000)
+            escreval("Valor de ",valor," pago com sucesso!")
+
+         caso 4
+            escreval("Valor total: R$",valor)
+            escreval("Dinheiro: ")
+            leia(dinheiro)
+
+
+            se(dinheiro < valor) entao
+               escreval("Valor insuficiente! Coça os bolsos!")
+
+            senao
+               se (dinheiro > valor) entao
+                  troco<- dinheiro - valor
+                  escreval("Valor de ",valor," pago com sucesso")
+                  escreval("Troco: R$",troco)
+
+               senao
+                  escreval("Valor de ",valor," pago com sucesso")
+               fimse
+            fimse
+
+         outrocaso
+            escreva("Forma de pagamento invalida")
+         fimescolha
+
+      senao
+         escreva("Pedido invalido!")
+      fimse
+   fimse
+
+fimalgoritmo
